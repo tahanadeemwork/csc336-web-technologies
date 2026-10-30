@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Linen Camp Shirt - NOIR</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="announcement bg-black text-white text-center py-2">
+      FREE SHIPPING ON ORDERS ABOVE RS. 2500
+    </div>
+
+    <!-- Navbar (Bootstrap) -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html">NOIR</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Woman</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Man</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Shoes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Accessories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Clearance</a>
+            </li>
+          </ul>
+          <a class="nav-link" href="#">Cart (0)</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container py-5">
+      <div class="row g-4">
+        <!-- Images -->
+        <div class="col-12 col-md-6">
+          <img
+            src="images/product-main.png"
+            class="img-fluid mb-3"
+            alt="Linen Camp Shirt"
+          />
+          <div class="row g-2">
+            <div class="col-3">
+              <img
+                src="images/product-front.png"
+                class="img-fluid"
+                alt="Front view"
+              />
+            </div>
+            <div class="col-3">
+              <img
+                src="images/product-back.png"
+                class="img-fluid"
+                alt="Back view"
+              />
+            </div>
+            <div class="col-3">
+              <img
+                src="images/product-detail.png"
+                class="img-fluid"
+                alt="Detail view"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Details -->
+        <div class="col-12 col-md-6">
+          <h1 class="product-title">LINEN CAMP SHIRT</h1>
+          <p class="price">Rs. 6,450.00</p>
+
+          <label for="size" class="form-label">Size</label>
+          <select id="size" class="form-select mb-3">
+            <option>Small</option>
+            <option selected>Medium</option>
+            <option>Large</option>
+            <option>X-Large</option>
+          </select>
+
+          <label for="quantity" class="form-label">Quantity</label>
+          <input
+            type="number"
+            id="quantity"
+            class="form-control mb-3"
+            value="1"
+            min="1"
+          />
+
+          <button type="button" class="btn btn-dark w-100 mb-4">
+            ADD TO CART
+          </button>
+
+          <h2 class="info-heading">Description</h2>
+          <p>
+            A relaxed short-sleeve camp shirt in breathable linen, with an open
+            collar and a straight hem. Easy to wear on its own or layered.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (same on both pages) -->
+    <footer class="border-top mt-5 pt-5 pb-4">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+          <div class="col">
+            <h4 class="footer-heading">Company</h4>
+            <ul class="list-unstyled">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4 class="footer-heading">Help</h4>
+            <ul class="list-unstyled">
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Returns / Exchanges</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h4 class="footer-heading">Sign Up and Save</h4>
+            <input
+              type="email"
+              class="form-control mb-2"
+              placeholder="Enter your email"
+              aria-label="Email address"
+            />
+            <button type="button" class="btn btn-dark btn-sm">Join</button>
+          </div>
+          <div class="col">
+            <h4 class="footer-heading">Customer Service</h4>
+            <p class="mb-1">Email: support@noir.example</p>
+            <p class="mb-1">09:00 AM to 09:00 PM</p>
+            <p class="mb-0">Monday - Saturday</p>
+          </div>
+        </div>
+        <p class="text-center text-secondary mt-4 mb-0">
+          &copy; 2026 NOIR. CSC336 Assignment 2.
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

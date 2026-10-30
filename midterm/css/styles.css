@@ -1,0 +1,95 @@
+/* Custom styles on top of Bootstrap.
+   Bootstrap does the grid, navbar and buttons;
+   this file adds the black-and-white look. */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111111;
+}
+
+a {
+  color: #111111;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Announcement bar */
+.announcement {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+/* Navbar brand */
+.brand {
+  font-size: 28px;
+  letter-spacing: 6px;
+}
+
+/* Hero banner */
+.hero {
+  background-color: #1a1a1a;
+  padding: 60px 16px;
+}
+
+.hero-title {
+  font-size: 28px;
+  letter-spacing: 4px;
+}
+
+/* Headings and product text */
+.section-title {
+  font-size: 18px;
+  letter-spacing: 4px;
+}
+
+.product-name {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.price {
+  font-size: 14px;
+  color: #555555;
+}
+
+.product-title {
+  font-size: 26px;
+  letter-spacing: 3px;
+}
+
+.info-heading {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-top: 1px solid #cccccc;
+  padding-top: 12px;
+}
+
+/* Footer */
+.footer-heading {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+/* Square buttons to match the style */
+.btn {
+  border-radius: 0;
+}
+
+/* Tablet and larger screens: bigger hero text */
+@media (min-width: 768px) {
+  .hero {
+    padding: 100px 16px;
+  }
+
+  .hero-title {
+    font-size: 48px;
+  }
+}
