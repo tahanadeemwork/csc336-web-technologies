@@ -136,3 +136,26 @@ main:has(#cat-accessories:checked) .col:not(.accessories) {
   display: none;
 }
 
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "image"
+    "details"
+    "description";
+  gap: 24px;
+}
+
+@media (min-width: 609px) {
+  .product-layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "image details"
+      "description description";
+  }
+  .product-details {
+    position: sticky;
+    top: 79px;
+    align-self: start;
+  }
+}

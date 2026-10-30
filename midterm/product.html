@@ -54,9 +54,10 @@
     </nav>
 
     <main class="container py-5">
-      <div class="row g-4">
+      <!-- Task 2: CSS Grid with named areas: image, details, description -->
+      <div class="product-layout">
         <!-- Images -->
-        <div class="col-12 col-md-6">
+        <div class="product-image">
           <img
             src="images/product-main.png"
             class="img-fluid mb-3"
@@ -87,8 +88,8 @@
           </div>
         </div>
 
-        <!-- Details -->
-        <div class="col-12 col-md-6">
+        <!-- Details box (sticky from 609px and wider) -->
+        <div class="product-details">
           <h1 class="product-title">LINEN CAMP SHIRT</h1>
           <p class="price">Rs. 6,450.00</p>
 
@@ -109,14 +110,54 @@
             min="1"
           />
 
-          <button type="button" class="btn btn-dark w-100 mb-4">
-            ADD TO CART
-          </button>
+          <button type="button" class="btn btn-dark w-100">ADD TO CART</button>
+        </div>
 
+        <!-- Description (long, so the page scrolls) -->
+        <div class="product-description">
           <h2 class="info-heading">Description</h2>
           <p>
             A relaxed short-sleeve camp shirt in breathable linen, with an open
             collar and a straight hem. Easy to wear on its own or layered.
+          </p>
+          <p>
+            The fabric is woven from European flax, which gives the shirt its
+            natural texture and keeps it cool on warm days. Linen softens with
+            every wash, so the shirt feels better the longer you own it.
+          </p>
+          <p>
+            The cut is intentionally roomy through the chest and shoulders. The
+            camp collar lies flat when worn open and sits neatly when the top
+            button is fastened. A straight hem means it can be worn untucked
+            without looking untidy.
+          </p>
+          <p>
+            Small details make the difference: corozo-style buttons, reinforced
+            side seams, and a single chest pocket that is stitched twice so it
+            holds its shape. The inside seams are finished neatly so nothing
+            scratches against the skin.
+          </p>
+          <p>
+            Style it with tailored trousers for the office, or with shorts for a
+            weekend outing. In cooler weather, wear it open over a plain
+            t-shirt. The neutral colour works with almost everything in a
+            wardrobe.
+          </p>
+          <p>
+            Sizing: the model is 6 feet tall and wears a medium. If you are
+            between two sizes, choose the larger one for a looser drape, or the
+            smaller one for a closer fit. All measurements are taken flat.
+          </p>
+          <p>
+            Care: machine wash cold with similar colours and do not bleach. Dry
+            flat or tumble dry on low. Iron on a medium setting while the shirt
+            is slightly damp for the smoothest finish. Light creasing is part of
+            the character of linen.
+          </p>
+          <p>
+            Delivery and returns: orders above Rs. 2500 ship free. Unworn items
+            can be exchanged within seven days of delivery, with the original
+            tags attached. Contact customer service for help with any order.
           </p>
         </div>
       </div>
