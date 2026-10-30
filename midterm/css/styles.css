@@ -136,6 +136,10 @@ main:has(#cat-accessories:checked) .col:not(.accessories) {
   display: none;
 }
 
+/* ---------- Task 2: product page layout with CSS Grid ---------- */
+/* BP = 600 + 9 = 609px, sticky offset = (9 mod 40) + 70 = 79px */
+
+/* Below 609px: one column, stacked: image, details, description */
 .product-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -146,6 +150,23 @@ main:has(#cat-accessories:checked) .col:not(.accessories) {
   gap: 24px;
 }
 
+.product-image {
+  grid-area: image;
+}
+
+.product-details {
+  grid-area: details;
+  border: 1px solid #dddddd;
+  padding: 24px;
+  background-color: #ffffff;
+}
+
+.product-description {
+  grid-area: description;
+}
+
+/* From 609px and wider: image and details side by side,
+   description full width underneath. The details box is sticky. */
 @media (min-width: 609px) {
   .product-layout {
     grid-template-columns: 1fr 1fr;
@@ -153,9 +174,23 @@ main:has(#cat-accessories:checked) .col:not(.accessories) {
       "image details"
       "description description";
   }
+
   .product-details {
     position: sticky;
     top: 79px;
     align-self: start;
   }
 }
+
+/* ---------- Task 3: Premium label added by script.js ---------- */
+.premium-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: hsl(63, 70%, 45%);
+  color: #111111;
+}
+
