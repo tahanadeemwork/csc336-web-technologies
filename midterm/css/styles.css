@@ -156,6 +156,9 @@ main:has(#cat-accessories:checked) .col:not(.accessories) {
 
 .product-details {
   grid-area: details;
+}
+
+.details-box {
   border: 1px solid #dddddd;
   padding: 24px;
   background-color: #ffffff;
@@ -175,10 +178,12 @@ main:has(#cat-accessories:checked) .col:not(.accessories) {
       "description description";
   }
 
-  .product-details {
+  /* The sticky box lives inside .product-details, which is as tall as the
+     image row, so the box stops at the bottom of that row and never
+     covers the description. */
+  .details-box {
     position: sticky;
     top: 79px;
-    align-self: start;
   }
 }
 
