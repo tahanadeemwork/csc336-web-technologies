@@ -1,118 +1,45 @@
-# Assignment 2: E-commerce Site (Static, Responsive Pages)
+# CSC336 Web Technologies: Lab Mid Term
 
-**Course:** CSC336 Web Technologies, Fall 2026
-**Student:** Taha Nadeem
-**Roll Number:** FA24-BCS-109
+- **Name:** Taha Nadeem
+- **Roll number:** FA24-BCS-109
+- **N** = 9 (last two digits of the roll number)
+- **BP** = 600 + 9 = **609px**
+- **H** = (9 x 7) mod 360 = **63**, accent colour `hsl(63, 70%, 45%)`
+- **K** = (9 mod 3) + 3 = **3** categories (so 4 radio buttons: All + 3)
+- Sticky offset = (9 mod 40) + 70 = **79px**
+- Premium price limit = 9 x 100 = **Rs. 900**
 
----
+Starting point: `midterm/` is a copy of my `assignment-2/` work (commit "midterm: baseline copy").
 
-## Reference Site
+## Files changed
 
-- **Name:** Lama Retail
-- **URL:** https://pk.lamaretail.com/
+- `index.html`
+- `product.html`
+- `css/styles.css`
+- `script.js` (new)
+- `README.md` (replaced with this file)
+- `screenshots/` (new, screenshots used in the PDF)
+- `FA24-BCS-109-midterm.pdf` (new, replaces the copied Assignment 2 PDF)
 
-Lama Retail is a Pakistani fashion brand with a live online store. I am using it as a realistic model for a product listing page, a product detail page and, in later assignments, a cart and checkout flow. I am not copying its code or images.
+## Task 1: CSS-only category filter
 
-### Homepage
+- **index.html:** every product column got one of 3 category classes (`tops`, `bottoms`, `accessories`), and 4 radio buttons with labels (All, Tops, Bottoms, Accessories) were added above the grid. "All" is `checked` so it is selected on load.
+- **css/styles.css:** rules like `main:has(#cat-tops:checked) .col:not(.tops) { display: none; }` hide every card that does not belong to the checked category. The hidden column is removed from the layout, so the grid leaves no gaps. The selected label gets the accent colour 63 through `.filters input:checked + label`.
+- **Why:** `:has()` lets the page react to the checked radio button without any JavaScript.
 
-![Homepage of Lama Retail](screenshots/reference-homepage.png)
+## Task 2: Product page with CSS Grid and a sticky details box
 
-### Other sections of the homepage
+- **product.html:** the Bootstrap row/column wrapper was replaced by one `product-layout` container with three blocks: `product-image`, `product-details` (holding a `details-box`) and `product-description`. The description was made longer so the page scrolls.
+- **css/styles.css:** `.product-layout` is a CSS Grid with `grid-template-areas`. Below 609px the areas are stacked ("image", "details", "description"). From 609px the areas are "image details" and "description description". Inside the media query the `details-box` gets `position: sticky; top: 79px;`.
+- **Why:** the sticky box sits inside `product-details`, which is as tall as the image row, so the box stops at the end of that row and never covers the description.
 
-**On Sale section (product grid with sale prices and badges)**
+## Task 3: JavaScript live search and price sort
 
-![Lama Retail On Sale section](screenshots/reference-sale.png)
+- **index.html:** added a search box, a "Sort by price" button, a hidden "No products found" message, `id="productGrid"` on the grid row, and the `script.js` link.
+- **script.js:** `getPrice()` reads each price from the card itself. A search handler hides cards whose name does not contain the typed text, counts the cards that are really visible (the CSS category filter may hide others) and shows "No products found" in place of the grid when none are visible. The sort button re-orders the existing cards with `appendChild`, low to high first, then high to low. On page load a "Premium" label is added to every card priced above Rs. 900.
+- **css/styles.css:** a `.premium-label` style using the accent colour.
+- **Note:** every product costs more than Rs. 900, so every card gets the Premium label. I did not change the Assignment 2 prices.
 
-**Product row and footer (columns, newsletter signup, customer service)**
+## AI tools used
 
-![Lama Retail footer](screenshots/reference-footer.png)
-
-### Other pages of the reference site (used as design references)
-
-**Product listing page** (filter and sort bar, 4-column grid)
-
-![Lama Retail listing page](screenshots/reference/listing-page.png)
-
-**Product detail page** (thumbnails, large image, size, quantity, Add to Cart)
-
-![Lama Retail product page](screenshots/reference/product-page.png)
-
-**Cart** (used in Assignment 3)
-
-![Lama Retail cart](screenshots/reference/cart-drawer.png)
-
-**Checkout** (used in Assignment 4)
-
-![Lama Retail checkout, contact and delivery](screenshots/reference/checkout-top.png)
-
-![Lama Retail checkout, payment](screenshots/reference/checkout-payment.png)
-
----
-
-## About This Project
-
-A static, responsive front page and product page for an e-commerce site, modeled on Lama Retail. This assignment covers layout, styling and responsiveness only. There is no JavaScript yet, so the cart icon and "Add to Cart" buttons do not work. They are added in Assignment 3.
-
-## Pages
-
-| File             | Description                                                                                                                      |
-| ---------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `index.html`     | Homepage and product listing: header with logo, navbar and cart icon, a responsive grid of 8 or more product cards, and a footer |
-| `product.html`   | Product detail page: larger image, name, price, description, quantity selector, "Add to Cart" button, and the same footer        |
-| `css/styles.css` | My own styles layered on top of Bootstrap                                                                                        |
-
-## Tech Used
-
-- HTML5
-- CSS3 (custom styles in `css/styles.css`)
-- **Bootstrap 5**, loaded from a CDN, used for:
-  - the responsive navbar (collapses into a menu button on small screens)
-  - the grid system (`row` and `col-*` classes) for the product cards and footer columns
-- No JavaScript written by me. Bootstrap's own script is used only for the navbar toggle.
-
-## Responsive Design
-
-The layout reflows at three widths:
-
-| Width                      | Layout                                                                                  |
-| -------------------------- | --------------------------------------------------------------------------------------- |
-| Phone (~375px)             | Product cards in 2 columns, navbar collapsed into a menu button, footer columns stacked |
-| Tablet (~768px)            | Product cards in 3 columns, footer in 2 columns                                         |
-| Desktop (1200px and above) | Product cards in 4 columns, full navbar, footer in 4 columns                            |
-
-## Folder Structure
-
-```
-assignment-2/
-├── index.html
-├── product.html
-├── README.md
-├── css/
-│   └── styles.css
-├── images/
-├── screenshots/
-│   ├── reference-homepage.png
-│   ├── reference-sale.png
-│   ├── reference-footer.png
-│   ├── desktop.png
-│   ├── tablet.png
-│   ├── phone.png
-│   └── reference/
-│       ├── listing-page.png
-│       ├── product-page.png
-│       ├── cart-drawer.png
-│       ├── checkout-top.png
-│       └── checkout-payment.png
-└── Assignment2_TahaNadeem_FA24-BCS-109.pdf
-```
-
-## How to Run
-
-1. Clone the repository and open the `assignment-2` folder in VS Code.
-2. Right-click `index.html` and choose **Open with Live Server**, or just open the file in a browser.
-3. Click a product (or open `product.html`) to see the detail page.
-
-## Notes
-
-- Product names, prices and images are placeholders modeled on the style of the reference site.
-- The same reference site is used in Assignments 3 and 4.
+Claude (Anthropic) was used to help write and test the code. I reviewed the code and can explain every part.
