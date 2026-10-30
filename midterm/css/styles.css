@@ -93,3 +93,46 @@ a:hover {
     font-size: 48px;
   }
 }
+
+/* ---------- Task 1: CSS-only category filter ---------- */
+/* Accent colour: H = 63, so hsl(63, 70%, 45%) */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.filters input {
+  accent-color: hsl(63, 70%, 45%);
+}
+
+.filters label {
+  padding: 6px 16px;
+  border: 1px solid #999999;
+  cursor: pointer;
+}
+
+/* The selected filter looks selected */
+.filters input:checked + label {
+  background-color: hsl(63, 70%, 45%);
+  border-color: hsl(63, 70%, 45%);
+  color: #111111;
+  font-weight: bold;
+}
+
+/* When a category is checked, hide every card that does not have that class.
+   The hidden column disappears completely, so no gaps are left in the grid. */
+main:has(#cat-tops:checked) .col:not(.tops) {
+  display: none;
+}
+
+main:has(#cat-bottoms:checked) .col:not(.bottoms) {
+  display: none;
+}
+
+main:has(#cat-accessories:checked) .col:not(.accessories) {
+  display: none;
+}
+
